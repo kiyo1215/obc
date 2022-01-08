@@ -9,66 +9,90 @@
   <meta http-equiv=" X-UA-Compatible" content="ie=edge">
 </head>
 <body>
+  <main>
   <h1>ふぁみーゆ支払い計算</h1>
 
   <form name="form" action="#">
+    <h2>初回セット<span>*必須</span></h2>
     <div class="first-price">
-      <h2>初回セット</h2>
-      <input type="radio" name="first" value="first">通常
-      <input type="radio" name="first" value="G1">G1コース
-      <input type="radio" name="first" value="G2">G2コース
+      <input type="radio" name="first" value="60">通常
+      <input type="radio" name="first" value="90">G1コース
+      <input type="radio" name="first" value="60">G2コース
     </div>
 
     <div class="extension">
-      <h2>延長</h2>
-      <p>来た時間<input type="time" name="come-time"></p>
-      <p>帰る時間<input type="time" name="go-time"></p>
-      <p>延長時間<input type="text"></p>
-      <p>延長回数<input type="text">回</p>
-      <p>延長料金<input type="text">円</p>
+      <h2>延長<span>*必須</span></h2>
+      <div class="time">
+        <p>来た時間<input type="number" name="come_hour" id="come_hour">時
+        <input type="number" name="come_minute" id="come_minute">分</p>
+      </div>
+      <div class="time">
+        <p>帰る時間<input type="number" name="go_hour" id="go_hour">時
+        <input type="number" name="go_minute" id="go_minute">分</p>
+      </div>
+      <p>延長回数<input type="text" name="extension_q" id="extension_q">回</p>
+      <p>延長料金<input type="text" name="extension_p" id="extension_p">円</p>
     </div>
 
     <div class="cast-drink">
       <h2>キャストドリンク</h2>
-      <p>
-        <input type="number" name="castDrinkQuantity">
-        <!-- <select name="castDrinkQuantity" onchange="keisan()">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select> -->
-        杯</p>
-      <p><input type="text" id="field1" name="field1" value="0">円</p>
+      <p><input type="number" name="castDrinkQuantity">杯</p>
+      <p><input type="text" id="field1" name="field1">円</p>
     </div>
 
     <div class="cheki">
       <h2>チェキ</h2>
-      <p><input type="number" name="cheki_quantity">杯</p>
-      <p><input type="text" name="cheki_price">円</p>
+      <p><input type="number" name="cheki_quantity">枚</p>
+      <p><input type="text" id="feild2" name="field2">円</p>
     </div>
 
     <div class="food">
       <h2>フード持ち込み</h2>
       <p><input type="number" name="food_quantity">品</p>
-      <p><input type="text" name="food_price">円</p>
+      <p><input type="text" id="feild3" name="food_price">円</p>
     </div>
 
     <div class="champagne">
       <h2>シャンパン</h2>
-      <p>シャンパンA<input type="number" name="champagneA">本</p>
-      <p>シャンパンB<input type="number" name="champagneB">本</p>
-      <p>シャンパンC<input type="number" name="champagneD">本</p>
-      <p>シャンパンD<input type="number" name="champagneC">本</p>
-      <p>シャンパンE<input type="number" name="champagneE">本</p>
+      <p>シャンパンA<input type="number" name="champagneA">本
+      <input type="text" id="feild4" class="champagne_p">円</p>
+      <p>シャンパンB<input type="number" name="champagneB">本
+      <input type="text" id="feild5" class="champagne_p">円</p>
+      <p>シャンパンC<input type="number" name="champagneD">本
+      <input type="text" id="feild6" class="champagne_p">円</p>
+      <p>シャンパンD<input type="number" name="champagneC">本
+      <input type="text" id="feild7" class="champagne_p">円</p>
+      <p>シャンパンE<input type="number" name="champagneE">本
+      <input type="text" id="feild8" class="champagne_p">円</p>
     </div>
 
-    <p><input type="btton" onclick="calc(castDrinkQuantity.value);" value="計算"></p>
-  </form>
-  <p>合計金額<input type="text">円</p>
+    <div class="outher">
+      <h2>その他</h2>
+      <p>+<input type="number" name="outher_p" id="outher_p"></p>
+      <p>-<input type="number" name="outher_m" id="outher_m"></p>
+    </div>
 
+    <button type="button" onclick="calc(
+      castDrinkQuantity.value, 
+      cheki_quantity.value,
+      food_quantity.value,
+      come_hour.value,
+      come_minute.value,
+      go_hour.value,
+      go_minute.value,
+      first.value,
+      outher_p.value,
+      outher_m.value,
+      champagneA.value,
+      champagneB.value,
+      champagneC.value,
+      champagneD.value,
+      champagneE.value,
+      );">計算</button>
+  </form>
+  <p class="all_p">合計金額<input type="text" name="all_p" id="all_p">円</p>
+
+  </main>
 　<script src="js/main.js"></script>
   </body>
 </html>
