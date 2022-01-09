@@ -67,12 +67,16 @@ function calc(
     Math.round(champagneI * 138000);
   
   
-    if (first === '60' || first === '60-2' ) {
+    if (first === '60') {
       const time4 = document.getElementById('all_p').value =
         Math.round(price1 + price2 + price4 + price5 - price6 + price7 + price8 + price9 + price10
           + price11 + price12 + price13 + price14 + price15 + 2500);
   } else if(first === '90') {
     const time4 = document.getElementById('all_p').value =
       Math.round(price1 + price2 + price4 + price5 - price6 + price7 + price8 + price9 + price10 + price11 + price12 + price13 + price14 + price15 + 3500);
-  };
+    } else if (first === '60-2') {
+       const time4 = document.getElementById('all_p').value =
+        Math.round(price1 + price2 + price4 + price5 - price6 + price7 + price8 + price9 + price10
+          + price11 + price12 + price13 + price14 + price15 + 3000);
+  }
 };
