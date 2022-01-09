@@ -3,7 +3,6 @@
 function calc(
   castDrinkQuantity,
   cheki_quantity,
-  food_quantity,
   come_hour,
   come_minute,
   go_hour,
@@ -40,9 +39,6 @@ function calc(
   const price2 = document.getElementById('feild2').value =
   Math.round(cheki_quantity * 1400);
   
-  const price3 = document.getElementById('feild3').value =
-  Math.round(food_quantity * 1000);
-  
   const price4 = document.getElementById('extension_p').value =
     Math.round(extension_q * 1000);
   
@@ -71,16 +67,12 @@ function calc(
     Math.round(champagneI * 138000);
   
   
-    if (first === '60') {
+    if (first === '60' || first === '60-2' ) {
       const time4 = document.getElementById('all_p').value =
-        Math.round(price1 + price2 + price3 + price4 + price5 - price6 + price7 + price8 + price9 + price10
+        Math.round(price1 + price2 + price4 + price5 - price6 + price7 + price8 + price9 + price10
           + price11 + price12 + price13 + price14 + price15 + 2500);
   } else if(first === '90') {
     const time4 = document.getElementById('all_p').value =
-      Math.round(price1 + price2 + price3 + price4 + price5 - price6 + price7 + price8 + price9 + price10 + price11 + price12 + price13 + price14 + price15 + 3500);
-  }else if(first === '60-2') {
-    const time4 = document.getElementById('all_p').value =
-      Math.round(price1 + price2 + price3 + price4 + price5 - price6 + price7 + price8 + price9 + price10 + price11 + price12 + price13 + price14 + price15 + 3000);
+      Math.round(price1 + price2 + price4 + price5 - price6 + price7 + price8 + price9 + price10 + price11 + price12 + price13 + price14 + price15 + 3500);
   };
-    
 };

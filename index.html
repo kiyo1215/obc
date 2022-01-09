@@ -15,7 +15,7 @@
   <form name="form" action="#">
     <h2>初回セット<span>※必須</span></h2>
     <div class="first-price">
-      <input type="radio" name="first" value="60-2">通常
+      <input type="radio" name="first" value="60-2">バータイム
       <input type="radio" name="first" value="90">G1コース
       <input type="radio" name="first" value="60">G2コース
     </div>
@@ -47,14 +47,8 @@
       <p><input type="text" id="feild2" name="field2">円</p>
     </div>
 
-    <div class="food">
-      <h2>フード持ち込み</h2>
-      <p><input type="number" name="food_quantity">品</p>
-      <p><input type="text" id="feild3" name="food_price">円</p>
-    </div>
-
     <div class="champagne">
-      <h2>シャンパン</h2>
+      <h2 id="champagne-style">シャンパン</h2>
 
       <p>ノンアルコール</p>
       <p>
@@ -105,14 +99,13 @@
 
     <div class="outher">
       <h2>その他(限定メニューや割引等）</h2>
-      <p>＋<input type="number" name="outher_p" id="outher_p"></p>
-      <p>ー<input type="number" name="outher_m" id="outher_m"></p>
+      <p>＋<input type="number" name="outher_p" id="outher_p">円</p>
+      <p>ー<input type="number" name="outher_m" id="outher_m">円</p>
     </div>
 
     <button type="button" onclick="calc(
       castDrinkQuantity.value,
       cheki_quantity.value,
-      food_quantity.value,
       come_hour.value,
       come_minute.value,
       go_hour.value,
