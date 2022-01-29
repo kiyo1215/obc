@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>ふぁみーゆ支払い計算</title>
+  <title>乙女ハウス支払い計算</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/calculation.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,41 +10,152 @@
 </head>
 <body>
   <main>
-  <h1>ふぁみーゆ支払い計算</h1>
+  <h1>乙女ハウス支払い計算</h1>
 
   <form name="form" action="#">
-    <h2>初回セット<span>※必須</span></h2>
-    <div class="first-price">
-      <input type="radio" name="first" value="60-2">バータイム
-      <input type="radio" name="first" value="90">G1コース
-      <input type="radio" name="first" value="60">G2コース
+    <div class="gender">
+      <p><input type="radio" name="gender" value="men">男性
+      <input type="radio" name="gender" value="women">女性</p>
     </div>
-
     <div class="extension">
-      <h2>延長<span>※必須</span></h2>
-      <div class="time">
-        <p>来た時間<input type="number" name="come_hour" id="come_hour">時
-        <input type="number" name="come_minute" id="come_minute">分</p>
+      <h2>滞在時間<br><span>※必須、30時間制で入力（例：深夜2時→26時）</span></h2>
+        <p>来た時間<input type="number" name="come_hour" class="quantity">時
+        <input type="number" name="come_minute" class="quantity">分</p>
+        <p>帰る時間<input type="number" name="go_hour" class="quantity">時
+        <input type="number" name="go_minute" class="quantity">分</p>
+      <p>チャージ回数<input type="text" name="extension_q" id="field1" value="0">回</p>
+      <p>チャージ料金<input type="text" name="extension_p" id="field2" value="0" class="price">円</p>
+    </div>
+    <div class="drink">
+      <h2>ドリンク</h2>
+      <h3>ショット</h3>
+      <div class="container">
+        <p>300円<input type="number" name="drink_300" class="quantity">杯<input type="text" id="field3" class="price">円</p>
+        <p class="type">梅干し・ソーダ等の割りもの</p>
       </div>
-      <div class="time">
-        <p>帰る時間<input type="number" name="go_hour" id="go_hour">時
-        <input type="number" name="go_minute" id="go_minute">分</p>
+      <div class="container">
+        <p>700円<input type="number" name="drink_700" class="quantity">杯<input type="text" id="field4" class="price">円</p>
+        <p class="type">紅茶、烏龍茶、ジャスミン茶、紅茶、ミルク、炭酸水、ジンジャエール、コーラ、カルピス、グレープフルーツ、オレンジ、アップル</p>
       </div>
-      <p>延長回数<input type="text" name="extension_q" id="extension_q" value="0">回</p>
-      <p>延長料金<input type="text" name="extension_p" id="extension_p" value="0">円</p>
+      <div class="container">
+        <p>800円<input type="number" name="drink_800" class="quantity">杯<input type="text" id="field5" class="price">円</p>
+        <p class="type">ハイボール</p>
+      </div>
+      <div class="container">
+        <p>900円<input type="number" name="drink_900" class="quantity">杯<input type="text" id="field6" class="price">円</p>
+        <p class="type">トマト、コーヒー、生ビール、角、シーバス12年、オールド、ジャックダニエル、鍛高譚、鏡月、黒霧島、一刻者、いいちこ、神の河、お茶割り各種、サワー各種、梅酒</p>
+      </div>
+      <div class="container">
+        <p>1000円<input type="number" name="drink_1000" class="quantity">杯<input type="text" id="field7" class="price">円</p>
+        <p class="type">レッドブル、ボトルチャージ</p>
+      </div>
+      <div class="container">
+        <p>1200円<input type="number" name="drink_1200" class="quantity">杯<input type="text" id="field8" class="price">円</p>
+        <p class="type">カクテル、ノンアルコールカクテル、吉四六、クライナー</p>
+      </div>
+      <div class="container">
+        <p>1500円<input type="number" name="drink_1500" class="quantity">杯<input type="text" id="field9" class="price">円</p>
+        <p class="type">推しメン応援ドリンク</p>
+      </div>
+      <div class="container">
+        <p>1800円<input type="number" name="drink_1800" class="quantity">杯<input type="text" id="field10" class="price">円</p>
+        <p class="type">白州</p>
+      </div>
+      <div class="container">
+        <p>2100円<input type="number" name="drink_2100" class="quantity">杯<input type="text" id="field11" class="price">円</p>
+        <p class="type">響</p>
+      </div>
+      <div class="container">
+        <p>2400円<input type="number" name="drink_2400" class="quantity">杯<input type="text" id="field12" class="price">円</p>
+        <p class="type">山崎</p>
+      </div>
+      <div class="container">
+        <p>2800円<input type="number" name="drink_2800" class="quantity">杯<input type="text" id="field13" class="price">円</p>
+        <p class="type">バランタイン</p>
+      </div>
+      <h3>ボトル</h3>
+      <div class="container">
+        <p>8000円<input type="number" 
+          name="buttle_8000" class="quantity">杯<input type="text" id="field14" class="price">円</p>
+        <p class="type">鍛高譚、鏡月、黒霧島、一刻者、いいちこ、神の河、梅酒</p>
+      </div>
+      <div class="container">
+        <p>8900円<input type="number" 
+          name="buttle_8900" class="quantity">杯<input type="text" id="field15" class="price">円</p>
+        <p class="type">角、シーバス12
+          年、オールド、ジャックダニエル</p>
+      </div>
+      <div class="container">
+        <p>12000円<input type="number" name="buttle_12000" class="quantity">杯<input type="text" id="field16" class="price">円</p>
+        <p class="type">吉四六、ワインボトル、久保田千住</p>
+      </div>
+      <div class="container">
+        <p>25000円<input type="number" name="buttle_25000" class="quantity">杯<input type="text" id="field17" class="price">円</p>
+        <p class="type">白州</p>
+      </div>
+      <div class="container">
+        <p>27000円<input type="number" name="buttle_27000" class="quantity">杯<input type="text" id="field18" class="price">円</p>
+        <p class="type">響</p>
+      </div>
+      <div class="container">
+        <p>28000円<input type="number" name="buttle_28000" class="quantity">杯<input type="text" id="field19" class="price">円</p>
+        <p class="type">久保田万寿</p>
+      </div>
+      <div class="container">
+        <p>29000円<input type="number" name="buttle_29000" class="quantity">杯<input type="text" id="field20" class="price">円</p>
+        <p class="type">山崎、バランタイン17
+          年</p>
+      </div>
+    </div>
+    <div class="food">
+      <h2>フード</h2>
+      <p>
+        ラーメン<input type="number" name="nudle" class="quantity">つ
+        オムライス<input type="number" name="egg_rice" class="quantity">つ
+      </p>
+      <p>
+        たこ焼きパーティー<input type="number" name="takoyaki" class="quantity">つ
+        枝豆<input type="number" name="edamame" class="quantity">つ
+      </p>
+      <p>
+        ナッツ<input type="number" name="nuts" class="quantity">つ
+      　唐揚げ<input type="number" name="karaage" class="quantity">つ
+      </p>
+      <p>
+        お菓子盛り合わせ<input type="number" name="snack" class="quantity">つ
+      　手作りおつまみ<input type="number" name="appetiizers" class="quantity">つ
+      </p>
+      <p>フード合計<input type="text" id="field34" class="price">円</p>
     </div>
 
     <div class="cast-drink">
-      <h2>キャストドリンク</h2>
-      <p class="check">※G1コースの場合、１杯少ない数字を入力</p>
-      <p><input type="number" name="castDrinkQuantity">杯</p>
-      <p><input type="text" id="field1" name="field1">円</p>
+      <h2>乙女の乾杯ドリンク</h2>
+      <p><input type="number" name="castDrinkQuantity" class="quantity">杯
+      <input type="text" id="field21" class="price">円</p>
+    </div>
+
+    <div class="karaoke">
+      <h2>カラオケ</h2>
+      <p><input type="number" name="karaoke" class="quantity">曲
+        <input type="text" id="field22" class="price">円
+      </p>
+    </div>
+
+    <div class="live">
+      <h2>乙女ライブ</h2>
+      <p><input type="number" name="live" class="quantity">曲</p>
+      <p>追加人数<input type="number" name="live_add" class="quantity">人</p>
+      <span>(例:1曲でアイドル３人まで。アイドル４人の場合、１曲と追加人数１人)</span>
+      <p><input type="text" id="field23" class="price">円
+      </p>
     </div>
 
     <div class="cheki">
-      <h2>チェキ</h2>
-      <p><input type="number" name="cheki_quantity">枚</p>
-      <p><input type="text" id="feild2" name="field2">円</p>
+      <h2>乙女チェキ</h2>
+      <p><input type="number" name="cheki_quantity" class="quantity">枚</p>
+      <p>追加人数<input type="number" name="cheki_add" class="quantity">人</p>
+      <span>(例:１枚でキャスト２人まで。キャスト３人の場合、１枚と追加人数１人)</span>
+      <p><input type="text" id="field24" class="price">円</p>
     </div>
 
     <div class="champagne">
@@ -52,55 +163,55 @@
 
       <p>ノンアルコール</p>
       <p>
-        <input type="number" name="champagneA">本
-        <input type="text" id="feild4" class="champagne_p">円
+        <input type="number" name="champagneA" class="quantity">本
+        <input type="text" id="field25" class="price">円
       </p>
 
       <p>カフェ・ド・パリ</p>
       <p>
-        <input type="number" name="champagneB">本
-      　<input type="text" id="feild5" class="champagne_p">円
+        <input type="number" name="champagneB" class="quantity">本
+      　<input type="text" id="field26" class="price">円
     　</p>
 
       <p>アスティ</p>
       <p>
-        <input type="number" name="champagneC">本
-      　<input type="text" id="feild6" class="champagne_p">円
+        <input type="number" name="champagneC" class="quantity">本
+      　<input type="text" id="field27" class="price">円
     　</p>
 
       <p>モエ・エ・シャンドン</p>
       <p>
-        <input type="number" name="champagneD">本
-      　<input type="text" id="feild7" class="champagne_p">円
+        <input type="number" name="champagneD" class="quantity">本
+      　<input type="text" id="field28" class="price">円
     　</p>
 
       <p>ヴーヴ・クリコ<p>
-      <p><input type="number" name="champagneE">本
-      <input type="text" id="feild8" class="champagne_p">円</p>
+      <p><input type="number" name="champagneE" class="quantity">本
+      <input type="text" id="field29" class="price">円</p>
 
       <p>モエ・エ・シャンドン・ロゼ</p>
-      <p><input type="number" name="champagneF">本
-      <input type="text" id="feild9" class="champagne_p">円</p>
+      <p><input type="number" name="champagneF" class="quantity">本
+      <input type="text" id="field30" class="price">円</p>
 
       <p>モエ・エ・シャンドン・クロ</p>
-      <p><input type="number" name="champagneG">本
-      <input type="text" id="feild10" class="champagne_p">円</p>
+      <p><input type="number" name="champagneG" class="quantity">本
+      <input type="text" id="field31" class="price">円</p>
 
       <p>ドン・ペリニオン</p>
-      <p><input type="number" name="champagneH">本
-      <input type="text" id="feild11" class="champagne_p">円</p>
+      <p><input type="number" name="champagneH" class="quantity">本
+      <input type="text" id="field32" class="price">円</p>
 
       <p>ドン・ペリニオン・ロゼ</p>
-      <p><input type="number" name="champagneI">本
-      <input type="text" id="feild12" class="champagne_p">円</p>
+      <p><input type="number" name="champagneI" class="quantity">本
+      <input type="text" id="field33" class="price">円</p>
       </p>
       </p>
     </div>
 
     <div class="outher">
       <h2>その他(限定メニューや割引等）</h2>
-      <p>＋<input type="number" name="outher_p" id="outher_p">円</p>
-      <p>ー<input type="number" name="outher_m" id="outher_m">円</p>
+      <p>＋<input type="number" name="outher_p" id="outher_p" class="price">円</p>
+      <p>ー<input type="number" name="outher_m" id="outher_m" class="price">円</p>
     </div>
 
     <button type="button" onclick="calc(
@@ -110,7 +221,7 @@
       come_minute.value,
       go_hour.value,
       go_minute.value,
-      first.value,
+      gender.value,
       outher_p.value,
       outher_m.value,
       champagneA.value,
@@ -122,14 +233,41 @@
       champagneG.value,
       champagneH.value,
       champagneI.value,
-      extension_q.value,
-      extension_p.value
+      drink_300.value,
+      drink_700.value,
+      drink_800.value,
+      drink_900.value,
+      drink_1000.value,
+      drink_1200.value,
+      drink_1500.value,
+      drink_1800.value,
+      drink_2100.value,
+      drink_2400.value,
+      drink_2800.value,
+      buttle_8000.value,
+      buttle_8900.value,
+      buttle_12000.value,
+      buttle_25000.value,
+      buttle_27000.value,
+      buttle_28000.value,
+      buttle_29000.value,
+      nudle.value,
+      egg_rice.value,
+      takoyaki.value,
+      edamame.value,
+      nuts.value,
+      karaage.value,
+      snack.value,
+      appetiizers.value,
+      karaoke.value,
+      live.value,
+      live_add.value,
+      cheki_add.value
       );">計算</button>
-      <p class="check">※２回押す</p>
   </form>
-  <p class="all_p">合計金額<input type="text" name="all_p" id="all_p">円</p>
+  <p class="all_p">合計金額<input type="text" id="all_p">円</p>
 
-  <a href="https://kiyo1215.github.io/fbm/">リセット</a>
+  <a href="https://kiyo1215.github.io/obc/">リセット</a>
 
   </main>
 　<script src="js/main.js"></script>
