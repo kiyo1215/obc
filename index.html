@@ -24,8 +24,9 @@
         <p>帰る時間<input type="number" name="go_hour" class="quantity">時
         <input type="number" name="go_minute" class="quantity">分</p>
       <p>チャージ回数<input type="text" name="extension_q" id="field1" value="0">回</p>
-      <p>チャージ料金<input type="text" name="extension_p" id="field2" value="0" class="price">円</p>
     </div>
+
+    <div class="none">
     <div class="drink">
       <h2>ドリンク</h2>
       <h3>ショット</h3>
@@ -214,6 +215,7 @@
       <p>ー<input type="number" name="outher_m" id="outher_m" class="price">円</p>
     </div>
 
+    </div>
     <button type="button" onclick="calc(
       castDrinkQuantity.value,
       cheki_quantity.value,
@@ -265,7 +267,6 @@
       cheki_add.value
       );">計算</button>
   </form>
-  <p class="all_p">合計金額<input type="text" id="all_p">円</p>
 
   <a href="https://kiyo1215.github.io/obc/">リセット</a>
 
