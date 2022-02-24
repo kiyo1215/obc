@@ -52,7 +52,13 @@ function calc(
 ){
   const time1 = Math.round((go_hour - come_hour) * 60);
   const time2 = Math.round(go_minute - come_minute);
-  const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2 - 40) / 20);
+
+  if (gender === 'new_men' || gender === 'new_women') {
+    const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2 - 40) / 20);
+  }
+  if (gender === 'men' || gender === 'women') {
+    const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2) / 20);
+  }
 
   if (gender === 'men') {
     var charge = document.getElementById('field2').value =
