@@ -50,14 +50,24 @@ function calc(
   live_add,
   cheki_add
 ){
+  
   const time1 = Math.round((go_hour - come_hour) * 60);
   const time2 = Math.round(go_minute - come_minute);
-
+  const value1 = Math.round(come_hour * 1);
+  const value2 = Math.round(come_minute * 1);
   if (gender === 'new_men' || gender === 'new_women') {
     const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2 - 40) / 20);
+    const time5 = Math.round(value1 * 60 + value2);
+    const time6 = Math.floor(time3 * 20 / 60);
+    document.getElementById('f-1').value = Math.floor((time5 + time6) / 60);
+    document.getElementById('f-2').value = Math.round((time5 + time6) % 60);
   }
   if (gender === 'men' || gender === 'women') {
     const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2) / 20);
+    const time5 = Math.round(value1 * 60 + value2);
+    const time6 = Math.floor(time3 * 20);
+    document.getElementById('f-1').value = Math.floor((time5 + time6) / 60);
+    document.getElementById('f-2').value = Math.round((time5 + time6) % 60);
   }
 
   if (gender === 'men') {
@@ -68,7 +78,6 @@ function calc(
     var charge = document.getElementById('field2').value =
     Math.round(time3 * 600);
   }
-  
   // ショット
   const drink1 = document.getElementById('field3').value =
     Math.round(drink_300 * 300);
