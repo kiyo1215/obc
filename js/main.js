@@ -58,7 +58,7 @@ function calc(
   if (gender === 'new_men' || gender === 'new_women') {
     const time3 = document.getElementById('field1').value = Math.ceil((time1 + time2 - 40) / 20);
     const time5 = Math.round(value1 * 60 + value2);
-    const time6 = Math.floor(time3 * 20 / 60);
+    const time6 = Math.floor(time3 * 20 + 40);
     document.getElementById('f-1').value = Math.floor((time5 + time6) / 60);
     document.getElementById('f-2').value = Math.round((time5 + time6) % 60);
   }
